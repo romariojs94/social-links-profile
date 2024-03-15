@@ -1,0 +1,51 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!doctype html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Astro description" />
+    <meta name="viewport" content="width=device-width" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../../public/assets/images/favicon-32x32.png"
+    />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="text-sm p-6 bg-[var(--Off-Black)] text-[--White] h-screen grid content-center items-center justify-center">
+    <slot />
+  </body>
+</html>
+<style is:global>
+	:root {
+		--Off-Black: hsl(0, 0%, 8%);
+		--Dark-Grey: hsl(0, 0%, 12%);
+		--Grey: hsl(0, 0%, 20%);
+		--White: hsl(0, 0%, 100%);
+		--Green: hsl(75, 94%, 57%);
+	}
+  @font-face {
+    font-family: 'InterBold';
+    src: url('../../public/assets/fonts/static/Inter-Bold.ttf');
+    font-weight: 700;
+  }
+	@font-face {
+		font-family: 'InterSemiBold';
+		src: url('../../public/assets/fonts/static/Inter-SemiBold.ttf');
+		font-weight: 600;
+	}
+  @font-face {
+    font-family: 'InterRegular';
+    src: url('../../public/assets/fonts/static/Inter-Regular.ttf'); 
+    font-weight: 400;
+  }
+</style>
